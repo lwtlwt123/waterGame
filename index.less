@@ -1,0 +1,104 @@
+@color1: red;
+@color2: orange;
+@color3: pink;
+@color4: blue;
+@color5: yellow;
+// @color6: red;
+// @color7: red;
+
+.box {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+
+    justify-content: center;
+    background-color: #ffe4b5;
+    position: relative;
+
+}
+
+.red {
+    width: 100%;
+    height: 20%;
+    background-color: @color1;
+}
+
+.orange {
+    width: 100%;
+    height: 20%;
+    background-color: @color2;
+}
+
+.pink {
+    width: 100%;
+    height: 20%;
+    background-color: @color3;
+}
+
+.blue {
+    width: 100%;
+    height: 20%;
+    background-color: @color4;
+}
+
+.yellow {
+    width: 100%;
+    height: 20%;
+    background-color: @color5;
+}
+
+// 上移一段距离
+/* .up{
+    margin-bottom: 100px;
+
+} */
+
+
+
+
+
+.bot {
+    width: 13%;
+    height: 25%;
+    background-color: white;
+    margin-right: 40px;
+    position: relative;
+    display: flex;
+    flex-direction: column-reverse;
+    // background-repeat: 5px;
+    border-radius: 8px;
+
+    /* &.bot1 {
+        background-color: @color1;
+    }
+
+    &.bot2 {
+        background-color: @color2;
+    }
+
+    &.bot3 {
+        background-color: @color3;
+    }
+
+    &.bot4 {
+        background-color: @color4;
+    }
+
+    &.bot5 {
+        background-color: @color5;
+    }
+
+    &.bot6 {
+        background-color: white;
+    }
+
+    &.bot7 {
+        background-color: white;
+    } */
+}
+
+.bot * {
+    // border-radius: 8px;
+
+}
