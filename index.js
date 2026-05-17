@@ -1,5 +1,12 @@
 
-import { actionAddWater, chooseBot, downFunction, changeBotWater, upFunction } from './method.js'
+import {
+    actionAddWater,
+    chooseBot,
+    downFunction,
+    changeBotWater,
+    upFunction,
+    successIf
+} from './method.js'
 
 
 // 所有瓶子
@@ -143,6 +150,8 @@ let botDom = ''
 
 // 点击事件
 function botClick(element) {
+
+
     let id = element.dataset.id
     // console.log(id + 1);
 
@@ -257,6 +266,19 @@ function botClick(element) {
     }
     botClickEvent = !botClickEvent
     clickId = id
+
+    console.log(successIf(botArr, botArrLength), "!!!!!!!!!");
+
+
+    // 判断是否胜利
+    if (successIf(botArr, botArrLength)) {
+        setTimeout(() => {
+            alert('胜利了，游戏结束')
+            setTimeout(() => {
+                location.reload()
+            }, 400);
+        }, 300);
+    }
 
 
 

@@ -40,6 +40,8 @@ function chooseBot(haveBot, emptyBot, botArr, botArrLength) {
 
     });
     // console.log(emptyBot);
+    // 遍历时候判断是否有胜利条件
+
 
     return { haveBot, emptyBot }
 
@@ -82,13 +84,54 @@ function upFunction(el) {
 }
 
 //点击下沉
-function downFunction(el){
-    console.log("放下？",el);
-    
+function downFunction(el) {
+    console.log("放下？", el);
+
     el.style.transform = 'translateY(0px)';
     el.style.transition = '.5s'; // 平滑动画
 }
 
+//判断胜利
+function successIf(botArr, botArrLength) {
+    // 如果botArr 的内容有五个长度等于5并且里面的颜色是一样的  说明游戏结束 胜利
+    /* botArr.forEach(element => {
+        // 长度为5的 数组
+        if (element.length == botArrLength) {
+            // 判断颜色是否一样
+            if (element.every(item => item == element[0])) {
+                // console.log("游戏结束");
+                return true
+            }
+        }
+    }); */
+    // return botArr.every(element => {
+    /* onsole.log(element.length);
+        
+        return element.length === botArrLength && element.every(item => item === element[0]); */
+
+    // 第一步：筛选出【装满了 + 颜色一样】的瓶子
+    const fullBottles = botArr.filter(item => {
+        // 必须是数组 + 装满了 + 颜色全部一样
+        return Array.isArray(item)
+            && item.length === botArrLength
+            && item.every(color => color === item[0])
+    })
+
+    // 第二步：够 5 个就胜利
+    const isWin = fullBottles.length >= 5
+    return isWin
+    // });
 
 
-export { actionAddWater, chooseBot, changeBotWater, upFunction ,downFunction}
+}
+
+
+
+export {
+    actionAddWater,
+    chooseBot,
+    changeBotWater,
+    upFunction,
+    downFunction,
+    successIf
+}
