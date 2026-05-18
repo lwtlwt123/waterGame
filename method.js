@@ -79,7 +79,13 @@ function changeBotWater(haveBot, emptyBot, botArr, botArrLength) {
 // 点击上移
 function upFunction(el) {
     el.style.transform = 'translateY(-50px)';
+    el.style.transform = 'transform: skewX(-3deg)';
+    el.style.transform = 'transform-origin: bottom center';
     el.style.transition = '.5s'; // 平滑动画
+    /* 
+    transform: skewX(-3deg);
+transform-origin: bottom center;
+    */
 
 }
 
