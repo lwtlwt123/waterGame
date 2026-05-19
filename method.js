@@ -78,10 +78,20 @@ function changeBotWater(haveBot, emptyBot, botArr, botArrLength) {
 
 // 点击上移
 function upFunction(el) {
-    el.style.transform = 'translateY(-50px)';
-    el.style.transform = 'transform: skewX(-3deg)';
-    el.style.transform = 'transform-origin: bottom center';
-    el.style.transition = '.5s'; // 平滑动画
+    el.style.transform = 'translateY(-80px) rotate(-10deg)';
+    // transform-origin 要单独写
+    el.style.transformOrigin = 'bottom center';
+    el.style.transition = '.5s';
+
+    // const liquids = el.querySelectorAll('div');
+    /* const liquids = Array.from(el.children);
+    console.log(liquids);
+
+    liquids.forEach(liquid => {
+        liquid.style.transform = 'rotate(10deg)'; // 和瓶子的旋转角度相反
+        liquid.style.transformOrigin = 'center center';
+        liquid.style.transition = '0.5s';
+    }); */
     /* 
     transform: skewX(-3deg);
 transform-origin: bottom center;

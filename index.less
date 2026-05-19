@@ -18,6 +18,8 @@
 .add() {
     width: 100%;
     height: 17%;
+    // flex-grow: 1;
+    // flex-shrink: 0;
     // margin-left: 5.5%;
     // margin-top: 10%;
 }
@@ -26,10 +28,11 @@ html,
 body {
     margin: 0;
     padding: 0;
+    min-width: 900px;
 }
 
 .box {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -78,8 +81,10 @@ body {
 
 
 .bot {
-    width: 13%;
-    height: 30%;
+    width: 10%;
+    // height: 30%;
+    aspect-ratio: 40 / 100;
+    // max-width: 100%;
     background-color: transparent;
     margin-right: 40px;
     position: relative;
@@ -93,14 +98,56 @@ body {
     .center();
     // 给里面加上顶
     // padding: 6% 10% .7% 10%;
-    // padding: 6% .7% .76% 1.28%;
+    padding: 5.5% .6% .76% 1.18%;
+    box-sizing: border-box;
     // padding-top: 6%;
     // padding-bottom: .7%;
     background-repeat: no-repeat;
-    aspect-ratio: 35 / 100;
+    border-radius: 4px 4px 0 0;
+    // aspect-ratio: 35 / 100;
 }
 
-.bot * {
+
+/* .bot::after {
+    content: '';
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    width: 20%;
+    height: 30%;
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 0.6) 0%,
+            rgba(255, 255, 255, 0) 100%);
+    border-radius: 10px;
+    pointer-events: none;
+    
+} */
+
+@keyframes liquidShake {
+
+    0%,
+    100% {
+        transform: scaleY(1);
+    }
+
+    50% {
+        transform: scaleY(1.1);
+    }
+}
+
+.bot>div {
     // border-radius: 8px;
+    /* 加上透明度，模拟液体通透感 */
+    opacity: 0.9;
+    /* 加个内阴影，模拟瓶壁反光 */
+    // box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.4),
+    //     inset 0 -2px 4px rgba(0, 0, 0, 0.1);
+    animation: liquidShake 2s ease-in-out infinite;
+    transform-origin: bottom;
+    /* 从底部缩放，像液面波动 */
+}
+
+.bot>div:first-child {
+    border-radius: 2px 2px 0 0;
 
 }
